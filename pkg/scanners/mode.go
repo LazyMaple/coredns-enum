@@ -23,9 +23,9 @@ func GetDefaultAPIServerCert(zone string) (*x509.Certificate, error) {
 	// assume one
 	cert := certs[0]
 
-	if cert.Issuer.CommonName != "kubernetes" {
-		return nil, fmt.Errorf("problem getting apiserver cert")
-	}
+	// if cert.Issuer.CommonName != "kubernetes" {
+	//	return nil, fmt.Errorf("problem getting apiserver cert")
+	//}
 
 	// look at kubernetes.default and kube-dns.kube-system to determine pod/node networks
 	return cert, nil
